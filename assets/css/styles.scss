@@ -1,0 +1,34 @@
+/*---------------------------------------------- theme */
+@import "theme";
+
+/*---------------------------------------------- utilities */
+@import "utilities";
+
+/*---------------------------------------------- base */
+@import "base";
+
+/*---------------------------------------------- custom-check-box-styling */
+@import "custom_check_boxes";
+
+/*---------------------------------------------- main styling - all breakpoints */
+@import "breakpoints/all";
+
+/*---------------------------------------------- first breakpoint - small */
+@media(min-width: (480/16 * 1em)){
+	@import "breakpoints/first";
+}
+
+/*---------------------------------------------- second breakpoint - medium*/
+@media(min-width: 768/16 * 1em){
+	@import "breakpoints/second";
+}
+
+/*---------------------------------------------- third breakpoint - large*/
+@media(min-width: 1000/16 * 1em){
+	@import "breakpoints/third";
+}
+
+/*---------------------------------------------- third breakpoint - x-large*/
+@media(min-width: 1600/16 * 1em){
+	@import "breakpoints/fourth";
+}

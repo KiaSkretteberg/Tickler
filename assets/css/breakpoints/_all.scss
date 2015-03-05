@@ -1,0 +1,281 @@
+header {
+	nav {
+		position: absolute;
+		top: 89px;
+		right: 0;
+		margin: 0 20px 0 0;
+		ul{
+			li{
+				display: inline-block;
+				padding: 0.25em 0.5em;
+				a:link, a:visited{
+					color: inherit;
+				}
+				a:hover, a:active{
+					color: $light-orange;
+				}
+			}
+		}
+	}
+	a {
+		color: inherit;
+		text-decoration: none;
+	}
+	h1 {
+		a:link, a:visited, a:hover, a:active{
+			color: inherit;
+		}
+	}
+}
+.featured-categories {
+	clear: both;
+	.feature {
+		float: left;
+		display: inline-block;
+		position: relative;
+		width: calc(25% - 5px);
+		background: url(../images/features.png);
+		background-size: 400%;
+		background-repeat: repeat-x;
+		height: 232px;
+		max-height: 262px;
+		margin-right: 5px;
+		color: $orange;
+		h3{
+			text-align: center;
+			line-height: 150%;
+			font-size: 30px;
+			margin: 0;
+		}
+		a {
+			display: block;
+			width: 100%;
+			height: 100%;
+			position: absolute;
+			left: 0;
+			top: 0;
+		}
+		&.logos{background-position: -2px 0;}
+		&.code-snippets{background-position: 33% 0;}
+		&.web-apps{background-position: 66% 0;}
+		&.web-sites{background-position: 99% 0;}
+	}
+}
+.profile {
+	max-width: calc(60% + 12px);
+	float: left;
+}
+.pagination {
+	clear: both;
+	line-height: 1.5em;
+	margin-bottom: 1em;
+}
+.sidebar{
+	min-width: calc(40% - 12px);
+	padding: 0 1em 1em;
+	float: left;
+	margin-bottom: 1em;
+	label {
+		display: block;
+	}
+	h3{
+		margin-top: 0;
+		color: $red;
+	}
+	h4{
+		margin-bottom: 0;
+		color: $red;
+	}
+	.complexity-range {
+		margin: 40px 20px 20px 16px;
+		.noUi-connect {
+			background: $blue;
+		}
+	}
+	.searchBox{
+		input[type="submit"]{
+			float: right;
+		}
+	}
+}
+.tooltip {
+	display: block;
+	position: absolute;
+	border: 1px solid #D9D9D9;
+	font: 400 12px/12px Arial;
+	border-radius: 3px;
+	background: #fff;
+	top: -26px;
+	padding: 5px;
+	left: -15px;
+	text-align: center;
+	width: 60px;
+}
+.photo {
+	margin-bottom: 1em;
+	margin-right: 10px;
+	position: relative;
+	float: left;
+	max-width: 225px;
+	figcaption {
+		text-align: right;
+	}
+	.photo-image{
+		display: block;
+		width:225px;
+		height: 162px;
+		background-size: cover;
+		overflow: hidden;
+		border: 10px solid #fff;
+		box-shadow: 3px 3px 3px rgba(37, 36, 46, 0.5);
+		margin-bottom: 5px;
+	}
+}
+.photo:nth-child(3n + 3){
+	margin-right: 0;
+}
+.photo:nth-child(3n + 1){
+	clear: both;
+}
+
+.intro {
+	width: 70%;
+	float: left;
+	h2 + p{
+		margin-top: 0;
+	}
+}
+.random-item{
+	width: calc(30% - 10px);
+	&.photo {
+		max-width: calc(30% - 10px);
+		margin-left: 10px;
+		margin-right: 0;
+		.photo-image{
+			width: 100%;
+			height: 180px;
+			border: 10px solid $red;
+			box-shadow: none;
+			background-size: cover;
+		}
+		.photo-icon {
+			top: 85px;
+			color: $blue;
+		}
+	}
+}
+
+.single-photo {
+	img {
+		max-width: calc(67% - 1em);
+		float: left;
+	}
+	ul {
+		width: 33%;
+		float: left;
+	}
+	.description {
+		clear: both;
+	}
+	.photo-icon {
+		top: 80px;
+		left: 30px;
+
+	}
+}
+
+/*Form Styles*/
+.form-footer {
+	position: relative;
+	.button {
+		float: left;
+		position: relative;
+		top: 0;
+		left: 0;
+	}
+}
+.submit{
+	padding: 5px 10px;
+	font-size: 18px;
+	margin: 0 5px 0 0;
+	float: left;
+	&:hover, input[type="file"]{
+		cursor: pointer;
+	}
+}
+.errors {
+	color: #930;
+}
+.error {
+	display: inline-block;
+	color: #930;
+	margin: 5px 0;
+}
+
+
+/*------------------ button styles */
+.signin {
+	float: left;
+	width: 100%;
+	form {
+		margin: 0;
+		p{
+			width: 100%;
+			margin: 0;
+		}
+	}
+}
+.signup{
+	float: left;
+	min-width: calc(40% - 20px);
+	p{
+		margin-top: 0;
+	}
+}
+
+/* Basic modal */
+.ui.basic.modal>.content>.image {
+  width: 25%;
+}
+.ui.basic.modal .ui.form .field>label{
+  color: #fff;
+}
+
+/* interactions page */
+.ui.divided.items {
+	position: relative;
+	.extra {
+		position: absolute;
+		bottom: 1em;
+		.button {
+			margin-bottom: 0;
+		}
+		
+	}
+}
+.input-info.ui.form>p{
+  margin: 0;
+}
+.photo figure {
+	margin: 0;
+}
+.label{
+	.ui.heart.rating{
+		.icon{
+			top: 0.3em;
+			left: 0.5em;
+			font-size: 1rem;
+		}
+	}
+	button {
+		border: 0;
+		background: transparent;
+		outline: 0;
+		&:active, &:focus, &:hover, &:blur {
+			outline: none;
+		}
+	}
+	form {
+		margin: 0;
+	}
+}

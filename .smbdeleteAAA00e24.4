@@ -1,0 +1,80 @@
+<?php
+	include('assets/includes/mysql_connect.php');
+	include('assets/includes/header.php');
+
+	$result = mysqli_query($con, "SELECT * FROM mug_users JOIN mug_data ON mug_users.user_id = mug_data.owner_id ORDER BY first_name DESC");
+	if (!mysqli_num_rows($result)==0):
+		while($row = mysqli_fetch_array($result)):
+			$user_id = $row['user_id'];
+			$posterResult = mysqli_query($con, "SELECT * FROM mug_data WHERE owner_id = $user_id ORDER BY timedate DESC LIMIT 4");
+			if (!mysqli_num_rows($posterResult)==0):
+				$avatar = $row['avatarImageURL'];
+				$avatar = str_replace("avatar", "avatar/profile/large", $avatar);
+				$userName = $row['first_name'] . " " . $row['last_name']; ?>
+				<div class='ui fluid card'>
+					<div class="ui small image">
+						<img src="<?php echo $avatar ?>">
+					</div>
+					<div class="content">
+						<div class="header"><?php echo $userName?></div>
+							<div class="meta">
+								<a href='index.php?profile_id=<?php echo $user_id?>'>View Gallery</a>
+							</div>
+							<?php if($bio):?>
+								<div class="description"><?php echo $bio?></div>
+							<?php endif?>
+						</div>
+						<div class="ui four cards">
+						<?php while($row = mysqli_fetch_array($posterResult)):
+							$title = $row['title'];
+							$image_id = $row['image_id'];
+							$imagename = $row['imageURL'];
+							$thumbnail = str_replace("galleries", "galleries/thumbs/large", $imagename); ?>
+							<div class="card">
+								<div class="image">
+									<a class="ui corner red label" href='image.php?image_id=<?php echo $image_id?>'><i class="heart icon"></i></a>
+									<img src="<?php echo $thumbnail?>">
+								</div>
+								<div class="extra">
+									<div data-rating="5" class="ui star rating">
+										<i class="icon"></i>
+										<i class="icon"></i>
+										<i class="icon"></i>
+										<i class="icon"></i>
+										<i class="icon"></i>
+									</div>
+									<div class='description'>
+										<a href='image.php?image_id=<?php echo $image_id?>'> <?php echo $title?></a><br>
+										Posted by <a href='profile.php?profile_id=<?php echo $owner_id?>'><?php echo $userName ?></a>
+									</div>
+								</div>
+							</div>
+						<?php endwhile //images loop?>
+						</div>
+					</div>
+				</div>
+			<?php else ://no posts result?>
+				<p>Welcome to Tickler. Tickler is a community for people to share their photos.</p>
+				<?php if($loggedIn):?>
+					<p>Why not post one of your own?</p>
+				<?php else :?>
+					<p><a href='signup.php'>Sign up</a> to post your own photos.</p>
+				<?php endif ?>
+			<?php endif //check for posts if?>
+		<?php endwhile //user loop?>
+	<?php else ://no users result?>
+		<p>Welcome to Tickler. Tickler is a community for people to share their photos.</p>
+		<?php if($loggedIn):?>
+			<p>Why not post one of your own?</p>
+		<?php else :?>
+			<p><a href='signup.php'>Sign up</a> to post your own photos.</p>
+		<?php endif ?>
+	<?php endif //check for user if?>
+?>
+</div>
+<!-- side bar search area -->
+<!-- <div class='sidebar'>
+	<form action="<?php echo $_SERVER['PHP_SELF']; ?>" method="get" class=''>
+	</form>
+</div> -->
+<?php include('assets/includes/footer.php') ?>

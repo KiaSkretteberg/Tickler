@@ -1,0 +1,122 @@
+* {
+	box-sizing: border-box;
+}
+html, body, input, select, textarea{
+	font-family: "Noticia Text", georgia, serif;
+}
+html {
+  font-size: 100%;
+  line-height: 1.25em;
+}
+body {
+	margin: 0
+}
+header, footer, main{
+	overflow: hidden;
+}
+header, footer {
+	color: #fff;
+	background-color: $blue;
+}
+footer {
+	text-align: center;
+}
+main {
+	background-color: $light-orange;
+}
+a, a:link, a:visited {
+	color: $blue; 
+	text-decoration: none;
+}
+a:hover, a:active {color: $light-blue;}
+h1 {
+	font-size: 2em;
+}
+p {
+	margin: 1.5rem 0;
+}
+ul {
+	margin: 0;
+	padding: 0;
+	list-style-type: none;
+	clear: none;
+}
+// img {
+// 	padding: 10px;
+// 	background-color: #fff;
+// 	box-shadow: 3px 3px 3px rgba($dark-blue, 0.5);
+// 	margin-right: 1em;
+// 	margin-bottom: 1em;
+// }
+figure{
+	margin: 0;
+	padding: 0;
+}
+
+
+
+
+/*------------------ form styles */
+/*.file-input:before  {
+	content: "*";
+	color: #930;
+	position: absolute;
+	margin-left: -10px;
+}*/
+form {
+	margin-top: 10px;
+	input, select, textarea {
+		font-size: 16px;
+		padding: 3px 5px;
+	}
+	input[type="text"], input[type="email"], input[type="password"], input[type="url"], input[type="number"], select, textarea{
+		box-sizing: border-box;
+		width: 100%;
+		border: 1px solid #aaa;
+		border-radius: 2px;
+	}
+	input[type="file"]{
+		padding-left: 0;
+	}
+	span.current-image {
+		display: block;
+		background-position: center;
+		background-repeat: no-repeat;
+		background-size: 100%;
+		overflow: hidden;
+	}
+	span.current-image.image-selected{
+		width: 250px; 
+		height: 188px;
+	}
+}
+form.input-info {
+	p, div{
+		width: 670px;
+		clear: both;
+		margin: 0;
+		position: relative;
+		margin-left: 10px;
+		padding: 5px 0 5px 170px; /*left padding is width of left column containing the labels*/
+		&.required {
+			&:before {
+				content: "*";
+				color: #930;
+				position: absolute;
+				margin-left: -10px
+			}
+		}	
+	}
+	label {
+		float: left;
+		margin-left: -170px;
+		width: 160px;
+		&.form-heading{
+			font-weight: bold;
+			font-size: 1.2em;
+			width: 250px;
+		}
+	}
+}
+
+
