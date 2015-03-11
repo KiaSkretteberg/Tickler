@@ -1,0 +1,17 @@
+.container {
+	width: 960px;
+	margin: 0 auto
+}
+.sidebar{
+	margin-left: -2px;
+	min-width: calc(40% - 12px);
+}
+.signin {
+	width: 60%;
+}
+.signup{
+	border-left: 1px solid $red;
+	padding: 0 20px;
+	margin-left: 20px;
+	width: calc(40% - 20px);
+}

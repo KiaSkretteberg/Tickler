@@ -1,0 +1,36 @@
+@mixin linear-gradient($top, $bottom){
+	background: -webkit-linear-gradient($top, $bottom);
+	background: -o-linear-gradient($top, $bottom);
+	background: -moz-linear-gradient($top, $bottom);
+	background: linear-gradient($top, $bottom);
+}
+.clearFix:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+.bold {
+	font-weight: bold;
+}
+.italics {
+	font-style: italic;
+}
+.container {
+	padding: 1em;
+	margin: 1em;
+	position: relative;
+}
+.hidden {
+	display: none;
+}
+.persona-btn {
+	color: #fff;
+	font: 1em 'OpenSans-Reg', "Lucida Sans", "Lucida Grande", "Lucida Sans Unicode", Verdana, sans-serif;
+	line-height: 2.2em;
+	padding: 0 1.5em 0 3em;
+	border: none;
+	background: url(../images/persona-btn.png);
+	background-size: 100% auto;
+	background-repeat: no-repeat;
+	cursor: pointer;
+}
